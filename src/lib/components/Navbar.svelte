@@ -1,0 +1,53 @@
+<script lang="ts">
+	import { page } from '$app/state';
+
+	interface Props {
+		toggleTheme: () => void;
+		theme: 'dark' | 'light';
+	}
+
+	let { toggleTheme, theme }: Props = $props();
+
+	let links = [
+		{ href: '/productos', label: 'Productos' },
+		{ href: '/catalogo', label: 'Catálogo' }
+	];
+</script>
+
+<nav
+	class="sticky top-0 z-50 flex items-center justify-between bg-white px-8 py-4 shadow-md dark:bg-gray-900 dark:shadow-gray-800"
+>
+	<div class="flex items-center">
+		<a
+			href="/"
+			class="text-xl font-bold text-gray-800 hover:text-gray-600 dark:text-white dark:hover:text-gray-300"
+			>Inicio</a
+		>
+	</div>
+
+	<div class="flex gap-8">
+		{#each links as link}
+			{@const isActive =
+				page.url.pathname === link.href || page.url.pathname.startsWith(link.href + '/')}
+			<a
+				href={link.href}
+				class="text-gray-600 transition-colors hover:text-gray-800 dark:text-gray-300 dark:hover:text-white {isActive
+					? 'font-semibold text-gray-800 dark:text-white'
+					: ''}"
+			>
+				{link.label}
+			</a>
+		{/each}
+	</div>
+
+	<div class="flex items-center gap-4">
+		<button
+			onclick={toggleTheme}
+			class="rounded-full p-2 text-2xl hover:bg-gray-100 dark:hover:bg-gray-800"
+			aria-label="Toggle theme"
+		>
+			{theme === 'dark' ? '☀️' : '🌙'}
+		</button>
+		<span class="text-3xl">🎸</span>
+	</div>
+</nav>
