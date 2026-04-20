@@ -7,7 +7,6 @@
 		<div>
 			<h3 class="mb-4 text-lg font-semibold text-gray-100">Contacto</h3>
 			<p class="text-gray-400">Email: contacto@empresa.com</p>
-			i
 			<p class="text-gray-400">Teléfono: +52 123 456 7890</p>
 		</div>
 
