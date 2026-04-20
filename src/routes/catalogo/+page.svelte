@@ -57,10 +57,8 @@
 	<title>Catálogo de Músicos</title>
 </svelte:head>
 
-<section class="mx-auto max-w-6xl bg-gray-50 px-8 py-8 dark:bg-gray-900">
-	<h1 class="mb-8 text-center text-5xl font-bold text-gray-800 dark:text-white">
-		Catálogo de Músicos
-	</h1>
+<section class="mx-auto w-full min-h-screen bg-gray-50 px-8 py-8 dark:bg-gray-900">
+	<h1 class="mb-8 text-center text-5xl font-bold text-gray-800 dark:text-white">Catálogo de Músicos</h1>
 	<div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
 		{#each musicians as musician}
 			<a

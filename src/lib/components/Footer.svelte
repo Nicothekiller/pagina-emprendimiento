@@ -2,11 +2,12 @@
 	const currentYear = new Date().getFullYear();
 </script>
 
-<footer class="mt-16 bg-gray-900 px-8 py-8 text-white dark:bg-black">
+<footer class="bg-gray-900 px-8 py-8 text-white dark:bg-black">
 	<div class="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-3">
 		<div>
 			<h3 class="mb-4 text-lg font-semibold text-gray-100">Contacto</h3>
 			<p class="text-gray-400">Email: contacto@empresa.com</p>
+			i
 			<p class="text-gray-400">Teléfono: +52 123 456 7890</p>
 		</div>
 

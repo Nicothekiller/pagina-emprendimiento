@@ -1,7 +1,7 @@
 <script lang="ts">
 	const company = {
 		description:
-			'Somos una plataforma dedicada a promover y vender productos de músicos independientes. Apoyamos a artistas locales conectándolos con amantes de la música.',
+			'Somos una plataforma dedicada a promover y comercializar merchandise de músicos independientes. Apoyamos a artistas locales conectándolos con sus fans.',
 		mission:
 			'Promover la música independiente y proporcionar una plataforma de venta segura para músicos.',
 		vision: 'Ser la principal plataforma de música independiente en México y Latinoamérica.'

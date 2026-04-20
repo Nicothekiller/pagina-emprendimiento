@@ -22,9 +22,9 @@
 			email: 'juan@musico.com',
 			social: ['Instagram', 'YouTube', 'Spotify'],
 			products: [
-				{ name: 'Guitarra Signature JP-1', price: 5500 },
-				{ name: 'Álbum "Camino de Piedra"', price: 300 },
-				{ name: 'Camiseta oficial', price: 450 }
+				{ name: 'Camiseta oficial', price: 25 },
+				{ name: 'Stickers pack', price: 5 },
+				{ name: 'Poster firmado', price: 20 }
 			]
 		},
 		'maria-garcia': {
@@ -36,9 +36,9 @@
 			email: 'maria@musico.com',
 			social: ['Instagram', 'Spotify', 'Bandcamp'],
 			products: [
-				{ name: 'Álbum "Noches de Azul"', price: 350 },
-				{ name: 'Clases de jazz online', price: 500 },
-				{ name: 'Vinilo "Sueños"', price: 800 }
+				{ name: 'Camiseta oficial', price: 25 },
+				{ name: 'Gorra', price: 20 },
+				{ name: 'Stickers pack', price: 5 }
 			]
 		},
 		'carlos-lopez': {
@@ -50,9 +50,9 @@
 			email: 'carlos@musico.com',
 			social: ['Instagram', 'YouTube', 'Spotify'],
 			products: [
-				{ name: 'EP "Verano"', price: 200 },
-				{ name: 'Poster firmado', price: 250 },
-				{ name: 'Meet & Greet', price: 1000 }
+				{ name: 'Camiseta oficial', price: 25 },
+				{ name: 'Llavero', price: 10 },
+				{ name: 'Stickers pack', price: 5 }
 			]
 		},
 		'ana-martinez': {
@@ -64,9 +64,9 @@
 			email: 'ana@musico.com',
 			social: ['Instagram', 'YouTube', 'Spotify'],
 			products: [
-				{ name: 'Álbum "Raíces"', price: 280 },
-				{ name: 'Ukulele artesanal', price: 1500 },
-				{ name: 'Librito de letras', price: 150 }
+				{ name: 'Camiseta oficial', price: 25 },
+				{ name: 'Stickers pack', price: 5 },
+				{ name: 'Poster', price: 15 }
 			]
 		},
 		'pedro-ramirez': {
@@ -78,9 +78,9 @@
 			email: 'pedro@musico.com',
 			social: ['Instagram', 'YouTube', 'Spotify'],
 			products: [
-				{ name: 'Álbum "Agujas de Blues"', price: 320 },
-				{ name: 'Guitarra artesanal', price: 8000 },
-				{ name: 'Masterclass de blues', price: 750 }
+				{ name: 'Gorra', price: 20 },
+				{ name: 'Camiseta oficial', price: 25 },
+				{ name: 'Taza', price: 12 }
 			]
 		},
 		'laura-flores': {
@@ -92,9 +92,9 @@
 			email: 'laura@musico.com',
 			social: ['Instagram', 'Spotify', 'Bandcamp'],
 			products: [
-				{ name: 'Álbum "Espejos"', price: 290 },
-				{ name: 'Vinilo edición limitada', price: 650 },
-				{ name: 'Camiseta edición especial', price: 400 }
+				{ name: 'Camiseta edición especial', price: 30 },
+				{ name: 'Stickers pack', price: 5 },
+				{ name: 'Llavero', price: 10 }
 			]
 		}
 	};
@@ -107,7 +107,7 @@
 	<title>{musician ? musician.name : 'Músico no encontrado'}</title>
 </svelte:head>
 
-<section class="mx-auto max-w-5xl bg-gray-50 px-8 py-8 dark:bg-gray-900">
+<section class="mx-auto min-h-screen w-full bg-gray-50 px-8 py-8 dark:bg-gray-900">
 	{#if musician}
 		<div
 			class="mb-12 rounded-lg bg-white p-8 shadow-lg md:grid md:grid-cols-[200px_1fr] md:gap-8 dark:bg-gray-800"

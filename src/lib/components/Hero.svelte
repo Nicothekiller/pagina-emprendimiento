@@ -19,7 +19,7 @@
 		🎸
 	</div>
 	<h1 class="mt-4 text-5xl font-bold text-white">Bienvenido a nuestra tienda</h1>
-	<p class="mt-4 text-xl text-gray-300">Descubre los mejores productos de músicos independientes</p>
+	<p class="mt-4 text-xl text-gray-300">Descubre el merchandise exclusivo de tus músicos favoritos</p>
 	<a
 		href="/productos"
 		class="mt-8 rounded-full bg-red-600 px-8 py-3 font-bold text-white transition-colors hover:bg-red-700"

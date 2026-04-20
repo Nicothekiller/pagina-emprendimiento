@@ -25,31 +25,31 @@ All commands must be run through Nix. Do NOT use npm, bun, or any other package 
 ### Development
 
 ```bash
-nix develop && bun run dev
+nix develop -c bun run dev
 ```
 
 ### Build
 
 ```bash
-nix develop && bun run build
+nix develop -c bun run build
 ```
 
 ### Type checking
 
 ```bash
-nix develop && bun run check
+nix develop -c bun run check
 ```
 
 ### Formatting
 
 ```bash
-nix develop && bun run format
+nix develop -c bun run format
 ```
 
 ### Linting
 
 ```bash
-nix develop && bun run lint
+nix develop -c bun run lint
 ```
 
 ## Styling Guidelines

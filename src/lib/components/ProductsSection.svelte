@@ -7,10 +7,10 @@
 	}
 
 	const products: Product[] = [
-		{ id: 1, name: 'Guitarra Acústica', price: 2500, image: '🎸' },
-		{ id: 2, name: 'Guitarra Eléctrica', price: 3500, image: '🎸' },
-		{ id: 3, name: 'Batería', price: 5000, image: '🥁' },
-		{ id: 4, name: 'Teclado', price: 2800, image: '🎹' }
+		{ id: 1, name: 'Camiseta Oficial', price: 25, image: '👕' },
+		{ id: 2, name: 'Stickers', price: 5, image: '🧴' },
+		{ id: 3, name: 'Gorra', price: 20, image: '🧢' },
+		{ id: 4, name: 'Llavero', price: 10, image: '🔑' }
 	];
 </script>
 
