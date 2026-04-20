@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
+
 	interface Product {
 		id: number;
 		name: string;
@@ -25,7 +27,7 @@
 				<h3 class="mb-2 text-xl font-semibold text-gray-800 dark:text-white">{product.name}</h3>
 				<p class="mb-4 text-2xl font-bold text-red-600">${product.price.toLocaleString()}</p>
 				<a
-					href="/productos"
+					href={resolve('/productos')}
 					class="inline-block rounded bg-gray-800 px-4 py-2 text-white transition-colors hover:bg-gray-700 dark:bg-gray-600 dark:hover:bg-gray-500"
 					>Ver más</a
 				>
@@ -34,7 +36,7 @@
 	</div>
 	<div class="mt-8 text-center">
 		<a
-			href="/productos"
+			href={resolve('/productos')}
 			class="text-lg font-bold text-gray-800 hover:text-red-600 dark:text-white dark:hover:text-red-400"
 			>Ver todos los productos →</a
 		>

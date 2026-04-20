@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
+
 	interface Musician {
 		id: string;
 		name: string;
@@ -62,7 +64,7 @@
 	<div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
 		{#each musicians as musician}
 			<a
-				href="/catalogo/{musician.id}"
+				href={resolve(`/catalogo/${musician.id}`)}
 				class="transform overflow-hidden rounded-lg bg-white shadow-md transition-transform hover:-translate-y-1 hover:shadow-xl dark:bg-gray-800"
 			>
 				<div class="bg-gray-100 px-8 py-12 text-center dark:bg-gray-700">

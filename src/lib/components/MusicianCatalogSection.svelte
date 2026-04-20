@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
+
 	interface Musician {
 		id: string;
 		name: string;
@@ -21,7 +23,7 @@
 	<div class="mx-auto grid max-w-6xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
 		{#each musicians as musician}
 			<a
-				href="/catalogo/{musician.id}"
+				href={resolve(`/catalogo/${musician.id}`)}
 				class="transform rounded-lg bg-gray-50 p-6 text-center shadow-md transition-transform hover:-translate-y-1 hover:shadow-xl dark:bg-gray-700"
 			>
 				<div class="mb-4 text-6xl">{musician.image}</div>
@@ -32,7 +34,7 @@
 	</div>
 	<div class="mt-8 text-center">
 		<a
-			href="/catalogo"
+			href={resolve('/catalogo')}
 			class="text-lg font-bold text-gray-800 hover:text-red-600 dark:text-white dark:hover:text-red-400"
 			>Ver todos los músicos →</a
 		>

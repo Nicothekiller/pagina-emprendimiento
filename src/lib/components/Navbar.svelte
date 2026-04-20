@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
+	import { resolve } from '$app/paths';
 
 	interface Props {
 		toggleTheme: () => void;
@@ -9,8 +10,8 @@
 	let { toggleTheme, theme }: Props = $props();
 
 	let links = [
-		{ href: '/productos', label: 'Productos' },
-		{ href: '/catalogo', label: 'Catálogo' }
+		{ href: resolve('/productos'), label: 'Productos' },
+		{ href: resolve('/catalogo'), label: 'Catálogo' }
 	];
 </script>
 

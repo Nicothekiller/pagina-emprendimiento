@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
+
 	const currentYear = new Date().getFullYear();
 </script>
 
@@ -12,13 +14,13 @@
 
 		<div>
 			<h3 class="mb-4 text-lg font-semibold text-gray-100">Políticas</h3>
-			<a href="/politicas-privacidad" class="block text-gray-400 hover:text-white"
+			<a href={resolve('/politicas-privacidad')} class="block text-gray-400 hover:text-white"
 				>Política de Privacidad</a
 			>
-			<a href="/terminos-condiciones" class="block text-gray-400 hover:text-white"
+			<a href={resolve('/terminos-condiciones')} class="block text-gray-400 hover:text-white"
 				>Términos y Condiciones</a
 			>
-			<a href="/politicas-envio" class="block text-gray-400 hover:text-white">Política de Envío</a>
+			<a href={resolve('/politicas-envio')} class="block text-gray-400 hover:text-white">Política de Envío</a>
 		</div>
 
 		<div>

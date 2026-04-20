@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
+	import { resolve } from '$app/paths';
 
 	interface Musician {
 		id: string;
@@ -152,7 +153,7 @@
 		<div class="py-16 text-center">
 			<h1 class="mb-4 text-3xl font-bold text-gray-800 dark:text-white">Músico no encontrado</h1>
 			<a
-				href="/catalogo"
+				href={resolve('/catalogo')}
 				class="text-gray-600 hover:text-red-600 dark:text-gray-300 dark:hover:text-red-400"
 				>← Volver al catálogo</a
 			>
