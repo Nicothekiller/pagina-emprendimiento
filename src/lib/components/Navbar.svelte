@@ -20,7 +20,7 @@
 >
 	<div class="flex items-center">
 		<a
-			href="/"
+			href={resolve('/')}
 			class="text-xl font-bold text-gray-800 hover:text-gray-600 dark:text-white dark:hover:text-gray-300"
 			>Inicio</a
 		>
