@@ -1,19 +1,8 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
+	import { getFeaturedMusicians } from '$lib/data/musicians';
 
-	interface Musician {
-		id: string;
-		name: string;
-		genre: string;
-		image: string;
-	}
-
-	const musicians: Musician[] = [
-		{ id: 'juan-perez', name: 'Juan Pérez', genre: 'Rock', image: '🎸' },
-		{ id: 'maria-garcia', name: 'María García', genre: 'Jazz', image: '🎷' },
-		{ id: 'carlos-lopez', name: 'Carlos López', genre: 'Pop', image: '🎤' },
-		{ id: 'ana-martinez', name: 'Ana Martínez', genre: 'Folk', image: '🪕' }
-	];
+	const musicians = getFeaturedMusicians(4);
 </script>
 
 <section class="bg-white px-8 py-16 dark:bg-gray-900">
@@ -23,10 +12,14 @@
 	<div class="mx-auto grid max-w-6xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
 		{#each musicians as musician}
 			<a
-				href={resolve(`/catalogo/${musician.id}`)}
+				href={resolve('/catalogo/[id]', { id: musician.id })}
 				class="transform rounded-lg bg-gray-50 p-6 text-center shadow-md transition-transform hover:-translate-y-1 hover:shadow-xl dark:bg-gray-700"
 			>
-				<div class="mb-4 text-6xl">{musician.image}</div>
+				<img
+					src={musician.image}
+					alt={musician.name}
+					class="mb-4 h-32 w-32 rounded-full object-cover mx-auto"
+				/>
 				<h3 class="mb-2 text-xl font-semibold text-gray-800 dark:text-white">{musician.name}</h3>
 				<p class="text-gray-500 dark:text-gray-400">{musician.genre}</p>
 			</a>

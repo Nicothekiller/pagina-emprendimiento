@@ -1,29 +1,23 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
+	import { getFeaturedMusicians } from '$lib/data/musicians';
 
-	interface Product {
-		id: number;
-		name: string;
-		price: number;
-		image: string;
-	}
-
-	const products: Product[] = [
-		{ id: 1, name: 'Camiseta Oficial', price: 25, image: '👕' },
-		{ id: 2, name: 'Stickers', price: 5, image: '🧴' },
-		{ id: 3, name: 'Gorra', price: 20, image: '🧢' },
-		{ id: 4, name: 'Llavero', price: 10, image: '🔑' }
-	];
+	const musicians = getFeaturedMusicians(4);
 </script>
 
 <section class="bg-gray-100 px-8 py-16 dark:bg-gray-900">
 	<h2 class="mb-8 text-center text-4xl font-bold text-gray-800 dark:text-white">Productos</h2>
 	<div class="mx-auto grid max-w-6xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-		{#each products as product}
+		{#each musicians as musician, i}
+			{@const product = musician.products[0]}
 			<div
 				class="transform rounded-lg bg-white p-6 text-center shadow-lg transition-transform hover:-translate-y-1 dark:bg-gray-700"
 			>
-				<div class="mb-4 text-6xl">{product.image}</div>
+				<img
+					src={musician.image}
+					alt={musician.name}
+					class="mb-4 h-40 w-full rounded-lg object-cover"
+				/>
 				<h3 class="mb-2 text-xl font-semibold text-gray-800 dark:text-white">{product.name}</h3>
 				<p class="mb-4 text-2xl font-bold text-red-600">${product.price.toLocaleString()}</p>
 				<a

@@ -1,107 +1,10 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { resolve } from '$app/paths';
-
-	interface Musician {
-		id: string;
-		name: string;
-		genre: string;
-		image: string;
-		bio: string;
-		email: string;
-		social: string[];
-		products: { name: string; price: number }[];
-	}
-
-	const musiciansData: Record<string, Musician> = {
-		'juan-perez': {
-			id: 'juan-perez',
-			name: 'Juan Pérez',
-			genre: 'Rock',
-			image: '🎸',
-			bio: 'Músico rockero con más de 10 años de experiencia en escenarios locales. Ha participado en numerosos festivales y tiene 3 álbumes publicados.',
-			email: 'juan@musico.com',
-			social: ['Instagram', 'YouTube', 'Spotify'],
-			products: [
-				{ name: 'Camiseta oficial', price: 25 },
-				{ name: 'Stickers pack', price: 5 },
-				{ name: 'Poster firmado', price: 20 }
-			]
-		},
-		'maria-garcia': {
-			id: 'maria-garcia',
-			name: 'María García',
-			genre: 'Jazz',
-			image: '🎷',
-			bio: 'Jazzista talentosa que combina jazz tradicional con elementos modernos. Ha actuado en clubes de jazz reconocido internacionalmente.',
-			email: 'maria@musico.com',
-			social: ['Instagram', 'Spotify', 'Bandcamp'],
-			products: [
-				{ name: 'Camiseta oficial', price: 25 },
-				{ name: 'Gorra', price: 20 },
-				{ name: 'Stickers pack', price: 5 }
-			]
-		},
-		'carlos-lopez': {
-			id: 'carlos-lopez',
-			name: 'Carlos López',
-			genre: 'Pop',
-			image: '🎤',
-			bio: 'Cantautor pop con varios sencillos en plataformas digitales. Sus canciones han alcanzado más de 1 millón de reproducciones.',
-			email: 'carlos@musico.com',
-			social: ['Instagram', 'YouTube', 'Spotify'],
-			products: [
-				{ name: 'Camiseta oficial', price: 25 },
-				{ name: 'Llavero', price: 10 },
-				{ name: 'Stickers pack', price: 5 }
-			]
-		},
-		'ana-martinez': {
-			id: 'ana-martinez',
-			name: 'Ana Martínez',
-			genre: 'Folk',
-			image: '🪕',
-			bio: 'Artista folk que rescata tradiciones musicales mexicanas. Su música celebración la riqueza cultural de México.',
-			email: 'ana@musico.com',
-			social: ['Instagram', 'YouTube', 'Spotify'],
-			products: [
-				{ name: 'Camiseta oficial', price: 25 },
-				{ name: 'Stickers pack', price: 5 },
-				{ name: 'Poster', price: 15 }
-			]
-		},
-		'pedro-ramirez': {
-			id: 'pedro-ramirez',
-			name: 'Pedro Ramírez',
-			genre: 'Blues',
-			image: '🎸',
-			bio: 'Guitarrista blues reconocido por su estilo único y emotivo. Ha compartido escenario con leyendas del blues.',
-			email: 'pedro@musico.com',
-			social: ['Instagram', 'YouTube', 'Spotify'],
-			products: [
-				{ name: 'Gorra', price: 20 },
-				{ name: 'Camiseta oficial', price: 25 },
-				{ name: 'Taza', price: 12 }
-			]
-		},
-		'laura-flores': {
-			id: 'laura-flores',
-			name: 'Laura Flores',
-			genre: 'Indie',
-			image: '🎤',
-			bio: 'Cantante indie con una propuesta sonora innovadora. Su sonido único la ha convertido en una de las artistas más prometedoras.',
-			email: 'laura@musico.com',
-			social: ['Instagram', 'Spotify', 'Bandcamp'],
-			products: [
-				{ name: 'Camiseta edición especial', price: 30 },
-				{ name: 'Stickers pack', price: 5 },
-				{ name: 'Llavero', price: 10 }
-			]
-		}
-	};
+	import { getMusicianById } from '$lib/data/musicians';
 
 	const musicianId = $derived(page.params.id ?? '');
-	const musician = $derived(musicianId ? musiciansData[musicianId] : undefined);
+	const musician = $derived(getMusicianById(musicianId));
 </script>
 
 <svelte:head>
@@ -111,9 +14,13 @@
 <section class="mx-auto min-h-screen w-full bg-gray-50 px-8 py-8 dark:bg-gray-900">
 	{#if musician}
 		<div
-			class="mb-12 rounded-lg bg-white p-8 shadow-lg md:grid md:grid-cols-[200px_1fr] md:gap-8 dark:bg-gray-800"
+			class="mb-12 rounded-lg bg-white p-8 shadow-lg md:grid md:grid-cols-[300px_1fr] md:gap-8 dark:bg-gray-800"
 		>
-			<div class="text-center text-9xl">🎸</div>
+			<img
+				src={musician.image}
+				alt={musician.name}
+				class="rounded-lg object-cover shadow-md"
+			/>
 			<div>
 				<h1 class="mb-2 text-4xl font-bold text-gray-800 dark:text-white">{musician.name}</h1>
 				<p class="mb-4 font-semibold text-red-600">{musician.genre}</p>
