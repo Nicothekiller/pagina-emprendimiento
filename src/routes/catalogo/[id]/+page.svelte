@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import { resolve } from '$app/paths';
+	import { resolve, asset } from '$app/paths';
 	import { getMusicianById } from '$lib/data/musicians';
 
 	const musicianId = $derived(page.params.id ?? '');
@@ -17,7 +17,7 @@
 			class="mb-12 rounded-lg bg-white p-8 shadow-lg md:grid md:grid-cols-[300px_1fr] md:gap-8 dark:bg-gray-800"
 		>
 			<img
-				src={musician.image}
+				src={asset(`/images/${musician.image}`)}
 				alt={musician.name}
 				class="rounded-lg object-cover shadow-md"
 			/>

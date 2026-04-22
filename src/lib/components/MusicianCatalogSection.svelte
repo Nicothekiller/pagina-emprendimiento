@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
+	import { resolve, asset } from '$app/paths';
 	import { getFeaturedMusicians } from '$lib/data/musicians';
 
 	const musicians = getFeaturedMusicians(4);
@@ -16,7 +16,7 @@
 				class="transform rounded-lg bg-gray-50 p-6 text-center shadow-md transition-transform hover:-translate-y-1 hover:shadow-xl dark:bg-gray-700"
 			>
 				<img
-					src={musician.image}
+					src={asset(`/images/${musician.image}`)}
 					alt={musician.name}
 					class="mb-4 h-32 w-32 rounded-full object-cover mx-auto"
 				/>

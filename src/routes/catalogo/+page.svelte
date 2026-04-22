@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
+	import { resolve, asset } from '$app/paths';
 	import { getAllMusicians } from '$lib/data/musicians';
 
 	const musicians = getAllMusicians();
@@ -19,7 +19,7 @@
 				href={resolve('/catalogo/[id]', { id: musician.id })}
 				class="transform overflow-hidden rounded-lg bg-white shadow-md transition-transform hover:-translate-y-1 hover:shadow-xl dark:bg-gray-800"
 			>
-				<img src={musician.image} alt={musician.name} class="h-64 w-full object-cover" />
+				<img src={asset(`/images/${musician.image}`)} alt={musician.name} class="h-64 w-full object-cover" />
 				<div class="p-6">
 					<h2 class="mb-2 text-2xl font-semibold text-gray-800 dark:text-white">{musician.name}</h2>
 					<p class="mb-2 font-semibold text-red-600">{musician.genre}</p>
