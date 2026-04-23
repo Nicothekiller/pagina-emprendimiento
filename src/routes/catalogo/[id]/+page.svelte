@@ -19,7 +19,7 @@
 			<img
 				src={asset(`/images/${musician.image}`)}
 				alt={musician.name}
-				class="rounded-lg object-cover shadow-md"
+				class="w-full rounded-lg object-cover shadow-md"
 			/>
 			<div>
 				<h1 class="mb-2 text-4xl font-bold text-gray-800 dark:text-white">{musician.name}</h1>

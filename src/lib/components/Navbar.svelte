@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import { resolve } from '$app/paths';
+	import { resolve, asset } from '$app/paths';
 
 	interface Props {
 		toggleTheme: () => void;
@@ -19,11 +19,9 @@
 	class="sticky top-0 z-50 flex items-center justify-between bg-white px-8 py-4 shadow-md dark:bg-gray-900 dark:shadow-gray-800"
 >
 	<div class="flex items-center">
-		<a
-			href={resolve('/')}
-			class="text-xl font-bold text-gray-800 hover:text-gray-600 dark:text-white dark:hover:text-gray-300"
-			>Inicio</a
-		>
+		<a href={resolve('/')} class="flex items-center">
+			<img src={asset('/logo.png')} alt="Inicio" class="h-12 w-auto" />
+		</a>
 	</div>
 
 	<div class="flex gap-8">
@@ -49,6 +47,5 @@
 		>
 			{theme === 'dark' ? '☀️' : '🌙'}
 		</button>
-		<span class="text-3xl">🎸</span>
 	</div>
 </nav>
